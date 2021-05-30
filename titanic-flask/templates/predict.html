@@ -13,10 +13,25 @@
         <h1>Titanic Survival Prediction</h1>
 
         <form action="{{ url_for('predict')}}" method="post">
-            <input type="text" name="prediction" placeholder="prediction" required="required" />
-
-            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+            <input type="text" name="age" placeholder="age" required="required" />
+            <br>
+            <input name="sex" list="sexlist" placeholder="sex" required="required" />
+            <br>
+            <input name="pclass" list="pclasslist" placeholder="passenger class" required="required" />
+            <br>
+            <button type="submit">Predict</button>
         </form>
+
+        <datalist id="sexlist">
+            <option>male</option>
+            <option>female</option>
+        </datalist>
+
+        <datalist id="pclasslist">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+        </datalist>
 
         <br>
         <br>
