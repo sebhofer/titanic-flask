@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Titanic Survival Prediction</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+</head>
+
+<body>
+    <div>
+        <h1>Titanic Survival Prediction</h1>
+
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="prediction" placeholder="prediction" required="required" />
+
+            <button type="submit">Predict</button>
+        </form>
+
+        <br>
+        <br>
+        Prediction: {{ prediction_text }}
+
+    </div>
+
+
+</body>
+
+</html>
