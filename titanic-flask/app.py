@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, flash, g, redirect, render_template, request, session, url_for
+from flask import Flask, g, render_template, request, url_for
 from create_model import predict_proba, load_model
 
 app = Flask(__name__, template_folder="templates")
@@ -23,3 +23,8 @@ def predict():
         return render_template("predict.html", prediction_text=prediction)
     else:
         return home()
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0")
+

@@ -4,16 +4,17 @@ import requests
 import os
 import pickle
 from sklearn.preprocessing import OneHotEncoder
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.pipeline import Pipeline
 from sklearn.compose import ColumnTransformer
 from sklearn.linear_model import LogisticRegressionCV
-from sklearn import metrics
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import make_scorer
-from sklearn.metrics import accuracy_score
+
+# from sklearn.model_selection import train_test_split
+# from sklearn import metrics
+# from sklearn.model_selection import GridSearchCV
+# from sklearn.metrics import make_scorer
+# from sklearn.metrics import accuracy_score
 
 
 DATA_DIR = "data"
