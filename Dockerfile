@@ -9,9 +9,9 @@ RUN conda env create --file environment.yml
 # solution from https://pythonspeed.com/articles/activate-conda-dockerfile/
 SHELL ["conda", "run", "-n", "titanic-flask", "/bin/bash", "-c"]
 
-COPY . .
+COPY src/ ./src/
 
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "titanic-flask", "python", "create_model.py"]
+RUN python src/model.py
 
 EXPOSE 5000
-ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "titanic-flask", "python", "app.py"]
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "titanic-flask", "python", "src/app.py"]
