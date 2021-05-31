@@ -11,5 +11,7 @@ SHELL ["conda", "run", "-n", "titanic-flask", "/bin/bash", "-c"]
 
 COPY . .
 
+ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "titanic-flask", "python", "create_model.py"]
+
 EXPOSE 5000
 ENTRYPOINT ["conda", "run", "--no-capture-output", "-n", "titanic-flask", "python", "app.py"]
