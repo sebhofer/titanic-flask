@@ -1,7 +1,7 @@
 import os
 
 from flask import Flask, g, render_template, request, url_for
-from create_model import predict_proba, load_model
+from model import predict_proba, load_model
 
 app = Flask(__name__, template_folder="templates")
 
