@@ -103,8 +103,10 @@ TRANSFORMER_PATH = os.path.join(DATA_DIR, TRANSFORMER_FILENAME)
 
 
 def load_model():
-    model = pickle.load(open(MODEL_PATH, "rb"))
-    transformer = pickle.load(open(TRANSFORMER_PATH, "rb"))
+    with open(MODEL_PATH, "rb") as fd:
+        model = pickle.load(fd)
+    with open(TRANSFORMER_PATH, "rb") as fd:
+        transformer = pickle.load(fd)
     return model, transformer
 
 
@@ -116,8 +118,10 @@ def run():
     download_data(DATA_PATH, DATA_URL)
     transformer, (X, y) = prepare_fit_data(clean_data(read_data(DATA_PATH)))
     clf = fit_lr(X, y)
-    pickle.dump(clf, open(MODEL_PATH, "wb"))
-    pickle.dump(transformer, open(TRANSFORMER_PATH, "wb"))
+    with open(MODEL_PATH, "wb") as fd:
+        pickle.dump(clf, fd)
+    with open(TRANSFORMER_PATH, "wb") as fd:
+        pickle.dump(transformer, fd)
 
 
 if __name__ == "__main__":
